@@ -1,17 +1,17 @@
 <?php
-  /* get_facebook.php
-   * This will pull the number of likes from any given Facebook page, this does not work with groups.
+  /* get_instagram.php
+   * This will pull the number of followers from any given Instagram page.
    *
    * 2018 Damian West <damian@damian.id.au>
    */
 
-  // we need to be given a page variable with the Facebook page
+  // we need to be given a page variable with the Instagram page
   if (!isset($_GET['page'])) {
     die('ERROR [0001] NO PAGE GIVEN');
   }
 
-  // build the URL for Facebook
-  $URL = 'https://www.facebook.com/plugins/fan.php?connections=100&id=' . $_GET['page'];
+  // build the URL for Instagram
+  $URL = 'https://www.instagram.com/' . $_GET['page'] .'/?__a=1';
 
   // set up CURL and execute (we are making out to be a browser here)
   $CURL = curl_init($URL);
