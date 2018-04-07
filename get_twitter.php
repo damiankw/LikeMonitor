@@ -31,5 +31,5 @@
   preg_match('/<div class="statnum">(\d{1,3}\,\d{1,3}\,\d{1,3}\,\d{1,3}|\d{1,3}\,\d{1,3}\,\d{1,3}|\d{1,3}\,\d{1,3}|\d{1,3})<\/div>/', $MATCH[1], $MATCH);
 
   // return the solid number with no commas
-  echo str_replace(',', '', $MATCH[1]);
+  echo sprintf('%06d', str_replace(',', '', $MATCH[1]));
 ?>

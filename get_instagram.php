@@ -26,5 +26,5 @@
   $DATA = json_decode($JSON, true);
 
   // output the required information
-  echo $DATA['graphql']['user']['edge_followed_by']['count'];
+  echo sprintf('%06d', $DATA['graphql']['user']['edge_followed_by']['count']);
 ?>

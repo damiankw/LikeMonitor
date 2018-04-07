@@ -5,6 +5,14 @@
   $TWITTER = file_get_contents($_SERVER['REQUEST_SCHEME'] . '://'. $_SERVER['SERVER_NAME'] .'/'. $_SERVER['REQUEST_URI'] .'get_twitter.php?page='. $_CONFIG['twitter']);
   $INSTAGRAM = file_get_contents($_SERVER['REQUEST_SCHEME'] . '://'. $_SERVER['SERVER_NAME'] .'/'. $_SERVER['REQUEST_URI'] .'get_instagram.php?page='. $_CONFIG['instagram']);
 
+  // converts a standard number to cards
+  function n2c($N) {
+    $a=strlen($N);
+    for ($i=0; $i<strlen($N); $i++) {
+      echo '<img src="images/card-'. substr($N, $i, 1) .'.png" height="150px" />';
+    }
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +25,13 @@
   <title><?php echo $_CONFIG['title']; ?></title>
   <style>
     body {
-      background-color: #000000;
+      background-color: #313237;
       font-size: 100pt;
       color: #FFFFFF;
+    }
+    
+    img {
+      padding: 5px;
     }
   </style>
 </head>
@@ -32,26 +44,26 @@
     </div>
     <div class="row">
       <div class="col-md-3">
-        <img src="http://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19762.png" height="200px" />
+        <a href="https://www.facebook.com/<?php echo $_CONFIG['facebook']; ?>"><img src="images/logo-facebook.png" height="150px" /></a>
       </div>
       <div class="col-md-9">
-        <?php echo number_format($FACEBOOK); ?>
+        <?php n2c(substr($FACEBOOK, 0, 3)); ?> <?php n2c(substr($FACEBOOK, 3, 3)); ?>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <img src="http://www.freelogovectors.net/wp-content/uploads/2013/04/twitter_bird_icon-785x785.jpg" height="200px" />
+        <a href="https://www.twitter.com/<?php echo $_CONFIG['twitter']; ?>"><img src="images/logo-twitter.png" height="150px" /></a>
       </div>
       <div class="col-md-9">
-        <?php echo number_format($TWITTER); ?>
+        <?php n2c(substr($TWITTER, 0, 3)); ?> <?php n2c(substr($TWITTER, 3, 3)); ?>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <img src="http://www.pingview.io/wp-content/uploads/2016/09/instagram-logo.png" height="200px" />
+        <a href="https://www.instagram.com/<?php echo $_CONFIG['instagram']; ?>"><img src="images/logo-instagram.png" height="150px" /></a>
       </div>
       <div class="col-md-9">
-        <?php echo number_format($INSTAGRAM); ?>
+        <?php n2c(substr($INSTAGRAM, 0, 3)); ?> <?php n2c(substr($INSTAGRAM, 3, 3)); ?>
       </div>
     </div>
   </div>

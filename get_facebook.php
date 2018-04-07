@@ -28,5 +28,5 @@
   }
 
   // return the solid number with no commas
-  echo str_replace(',', '', $MATCH[1]);
+  echo sprintf('%06d', str_replace(',', '', $MATCH[1]));
 ?>
