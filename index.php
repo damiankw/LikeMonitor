@@ -42,29 +42,17 @@
     <div class="row text-center">
       <img src="<?php echo $_CONFIG['logo']; ?>" />
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <a href="https://www.facebook.com/<?php echo $_CONFIG['facebook']; ?>"><img src="images/logo-facebook.png" height="150px" /></a>
-      </div>
-      <div class="col-md-9">
-        <?php n2c(substr($FACEBOOK, 0, 3)); ?> <?php n2c(substr($FACEBOOK, 3, 3)); ?>
-      </div>
+    <div class="row text-center">
+      <a href="https://www.facebook.com/<?php echo $_CONFIG['facebook']; ?>"><img src="images/logo-facebook.png" height="150px" /></a>
+      <?php n2c(substr($FACEBOOK, 0, 3)); ?> <?php n2c(substr($FACEBOOK, 3, 3)); ?>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <a href="https://www.twitter.com/<?php echo $_CONFIG['twitter']; ?>"><img src="images/logo-twitter.png" height="150px" /></a>
-      </div>
-      <div class="col-md-9">
-        <?php n2c(substr($TWITTER, 0, 3)); ?> <?php n2c(substr($TWITTER, 3, 3)); ?>
-      </div>
+    <div class="row text-center">
+      <a href="https://www.twitter.com/<?php echo $_CONFIG['twitter']; ?>"><img src="images/logo-twitter.png" height="150px" /></a>
+      <?php n2c(substr($TWITTER, 0, 3)); ?> <?php n2c(substr($TWITTER, 3, 3)); ?>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <a href="https://www.instagram.com/<?php echo $_CONFIG['instagram']; ?>"><img src="images/logo-instagram.png" height="150px" /></a>
-      </div>
-      <div class="col-md-9">
-        <?php n2c(substr($INSTAGRAM, 0, 3)); ?> <?php n2c(substr($INSTAGRAM, 3, 3)); ?>
-      </div>
+    <div class="row text-center">
+      <a href="https://www.instagram.com/<?php echo $_CONFIG['instagram']; ?>"><img src="images/logo-instagram.png" height="150px" /></a>
+      <?php n2c(substr($INSTAGRAM, 0, 3)); ?> <?php n2c(substr($INSTAGRAM, 3, 3)); ?>
     </div>
   </div>
 
