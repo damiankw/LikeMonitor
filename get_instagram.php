@@ -20,13 +20,11 @@
   curl_setopt($CURL, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.7.12) Gecko/20050915 Firefox/1.0.7");
   curl_setopt($CURL, CURLOPT_HEADER, false );
   curl_setopt($CURL, CURLOPT_RETURNTRANSFER, true );
-  $HTML = curl_exec($CURL);
+  $JSON = curl_exec($CURL);
 
-  // check if there is a valid return, if not the page must be invalid (this will be outdated after 1bil followers on a page. i'm not good at regex)
-  if (!preg_match('/>(\d{1,3}\,\d{1,3}\,\d{1,3}\,\d{1,3}|\d{1,3}\,\d{1,3}\,\d{1,3}|\d{1,3}\,\d{1,3}|\d{1,3}) likes</', $HTML, $MATCH)) {
-    die('ERROR [0002] PAGE INVALID');
-  }
+  // turn JSON into array
+  $DATA = json_decode($JSON, true);
 
-  // return the solid number with no commas
-  echo str_replace(',', '', $MATCH[1]);
+  // output the required information
+  echo $DATA['graphql']['user']['edge_followed_by']['count'];
 ?>
