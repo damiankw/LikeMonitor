@@ -55,11 +55,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
   <script>
-    // set up our pages
+    // set up our pages (this pulls from PHP config)
     var facebook = '<?php echo $_CONFIG['facebook']; ?>';
     var twitter = '<?php echo $_CONFIG['twitter']; ?>';
     var instagram = '<?php echo $_CONFIG['instagram']; ?>';
     
+    // this will actually pull the data from the PHP pages
     function get_data() {
       $.get("get_facebook.php?page="+facebook+"&img=true", function(data){
         document.getElementById('facebook').innerHTML = data;
@@ -74,10 +75,13 @@
       });
     }
 
+    // pull the data first off
     get_data();
+    
+    // every x seconds, pull it again
     window.setInterval(function() {
       get_data();
-    }, 5000);
+    }, <?php echo $_CONFIG['refresh'] * 1000; ?>);
   </script>
 
 </body>
