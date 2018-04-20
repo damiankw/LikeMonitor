@@ -31,7 +31,7 @@
   <!-- Github banner -->
   <div class="container">
     <div class="row text-center">
-      <img src="<?php echo $_CONFIG['logo']; ?>" />
+      <a href="<?php echo $_CONFIG['url']; ?>"><img src="<?php echo $_CONFIG['logo']; ?>" /></a>
     </div>
     <div class="row text-center">
       <a href="https://www.facebook.com/<?php echo $_CONFIG['facebook']; ?>"><img src="images/logo-facebook.png" height="150px" /></a>
