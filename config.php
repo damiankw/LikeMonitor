@@ -6,6 +6,6 @@
     'refresh' => 5,                                         // refresh rate in seconds
     'facebook' => 'GameRoomEssentials',                          // facebook page
     'twitter' => 'gameroom_au',                            // twitter page
-    'instagram' => 'microsoft'                         // instagram page
+    'instagram' => 'gameroom_au'                         // instagram page
   );
 ?>
