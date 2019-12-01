@@ -83,7 +83,7 @@ function get_instagram($PAGE, $IMG=false) {
   $HTML = curl_exec($CURL);
 
   // check if there is a valid return, if not the page must be invalid (this will be outdated after 1bil followers on a page. i'm not good at regex)
-  if (!preg_match('/content="(\d{1,3}\,\d{1,3}\,\d{1,3}\,\d{1,3}|\d{1,3}\,\d{1,3}\,\d{1,3}|\d{1,3}\,\d{1,3}|\d{1,3}) Followers/', $HTML, $MATCH)) {
+  if (!preg_match('/"userInteractionCount":"(\d+)"/', $HTML, $MATCH)) {
     die('ERROR [0002] PAGE INVALID');
   }
 
