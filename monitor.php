@@ -84,7 +84,8 @@ function get_instagram($PAGE, $IMG=false) {
 
   // check if there is a valid return, if not the page must be invalid (this will be outdated after 1bil followers on a page. i'm not good at regex)
   if (!preg_match('/"userInteractionCount":"(\d+)"/', $HTML, $MATCH)) {
-    die('ERROR [0002] PAGE INVALID ('. $MATCH .')');
+    //die('ERROR [0002] PAGE INVALID ('. $MATCH .')');
+    print_r($MATCH);
   }
 
   // NOTE: need to add another thing in here to convert 1.68bn to the real number (or find another way)
